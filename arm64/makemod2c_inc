@@ -1,0 +1,49 @@
+
+./HCNolm.c: ../HCNolm.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd ".."; MODLUNIT=$(NRNUNITS) $(NOCMODL) HCNolm.mod -o "/Users/shayan/Desktop/CN/gsoc_cn/olm_multicompartmental/arm64")
+
+./HCNolm.o: ./HCNolm.c
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(COMPILE) -I".." $(INCLUDES) -fPIC -c $< -o $@
+
+./Kdrfast.c: ../Kdrfast.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd ".."; MODLUNIT=$(NRNUNITS) $(NOCMODL) Kdrfast.mod -o "/Users/shayan/Desktop/CN/gsoc_cn/olm_multicompartmental/arm64")
+
+./Kdrfast.o: ./Kdrfast.c
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(COMPILE) -I".." $(INCLUDES) -fPIC -c $< -o $@
+
+./KvAolm.c: ../KvAolm.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd ".."; MODLUNIT=$(NRNUNITS) $(NOCMODL) KvAolm.mod -o "/Users/shayan/Desktop/CN/gsoc_cn/olm_multicompartmental/arm64")
+
+./KvAolm.o: ./KvAolm.c
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(COMPILE) -I".." $(INCLUDES) -fPIC -c $< -o $@
+
+./Nav.c: ../Nav.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd ".."; MODLUNIT=$(NRNUNITS) $(NOCMODL) Nav.mod -o "/Users/shayan/Desktop/CN/gsoc_cn/olm_multicompartmental/arm64")
+
+./Nav.o: ./Nav.c
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(COMPILE) -I".." $(INCLUDES) -fPIC -c $< -o $@
+
+./leak_chan.c: ../leak_chan.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd ".."; MODLUNIT=$(NRNUNITS) $(NOCMODL) leak_chan.mod -o "/Users/shayan/Desktop/CN/gsoc_cn/olm_multicompartmental/arm64")
+
+./leak_chan.o: ./leak_chan.c
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(COMPILE) -I".." $(INCLUDES) -fPIC -c $< -o $@
+
+./pg_olm.c: ../pg_olm.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd ".."; MODLUNIT=$(NRNUNITS) $(NOCMODL) pg_olm.mod -o "/Users/shayan/Desktop/CN/gsoc_cn/olm_multicompartmental/arm64")
+
+./pg_olm.o: ./pg_olm.c
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(COMPILE) -I".." $(INCLUDES) -fPIC -c $< -o $@
+
